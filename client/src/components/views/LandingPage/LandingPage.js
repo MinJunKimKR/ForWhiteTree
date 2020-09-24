@@ -3,7 +3,7 @@ import axios from 'axios';
 
 function LandingPage() {
   useEffect(() => {
-    axios.get('/api/hello').then((response) => {
+    axios.get('http://localhost:5000/api/gitftbox').then((response) => {
       console.log(response.data);
     });
   }, []);
