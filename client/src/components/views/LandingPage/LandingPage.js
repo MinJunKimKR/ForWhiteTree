@@ -1,24 +1,24 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
+import './landing.css'
+import { Route, Link } from "react-router-dom"
+import { Space, Typography, Button } from 'antd';
+import MainLandingPage from './LangingPageMain'
+import SecondPage from './LangdingPage2'
+const { Title, Paragraph, Text } = Typography;
 
-function LandingPage() {
+
+function LandingPage({ match }) {
   useEffect(() => {
-    axios.get('http://localhost:5000/api/gitftbox').then((response) => {
+    axios.get('/api').then((response) => {
       console.log(response.data);
     });
   }, []);
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: '100%',
-        height: '100vh',
-      }}
-    >
-      <h2>시작페이지</h2>
-    </div>
+    <>
+      <Route exact path={match.path} component={MainLandingPage} />
+      <Route exact path={`${match.path}/second`} component={SecondPage} />
+    </>
   );
 }
 
