@@ -10,6 +10,7 @@ const { Title, Paragraph, Text } = Typography;
 
 function LandingPage({ match }) {
   useEffect(() => {
+    console.log('match second : ', match)
     axios.get('/api').then((response) => {
       console.log(response.data);
     });
@@ -17,7 +18,7 @@ function LandingPage({ match }) {
   return (
     <>
       <Route exact path={match.path} component={MainLandingPage} />
-      <Route exact path={`${match.path}/second`} component={SecondPage} />
+      <Route exact path="/second" component={SecondPage} />
     </>
   );
 }
