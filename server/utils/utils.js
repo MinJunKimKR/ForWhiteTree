@@ -9,18 +9,16 @@ const passwords = {
 
 exports.passwordChecker = function (password, step) {
     try {
+        console.log(password)
+        if (!password) {
+            return 'blank password'
+        }
         if (step == "main" && password.replace(/ /g, "").toLowerCase() == passwords[step]) {
-            return {
-                result: true
-            }
-        } else if (step != "1" && password.replace(/ /g, "") == passwords[step]) {
-            return {
-                result: true
-            }
+            return true
+        } else if (step != "main" && password.replace(/ /g, "") == passwords[step]) {
+            return true
         } else {
-            return {
-                result: false
-            }
+            return false
         }
     } catch (error) {
         throw error
