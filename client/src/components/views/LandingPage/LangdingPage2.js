@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Route, Link } from 'react-router-dom'
 
-export default function Rooms({ match }) {
+function Rooms({ match }) {
+    useEffect(() => {
+        console.log('match second : ', match)
+    }, []);
     return (
         <div>
             <h2>여기는 방을 소개하는 페이지입니다.</h2>
@@ -12,6 +15,8 @@ export default function Rooms({ match }) {
         </div>
     )
 }
+
 function Room({ match }) {		// 함수형에서 match 참조하기
     return <h2>{`${match.params.roomId} 방을 선택하셨습니다.`}</h2>
 }
+export default Rooms;

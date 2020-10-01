@@ -18,7 +18,7 @@ function LandingPage({ match }) {
   return (
     <>
       <Route exact path={match.path} component={MainLandingPage} />
-      <Route exact path="/second" component={SecondPage} />
+      <Route exact path={`${match.path}/second`} component={SecondPage} />
     </>
   );
 }

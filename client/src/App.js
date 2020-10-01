@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Typography, Layout } from 'antd';
 import LandingPage from './components/views/LandingPage/LandingPage';
-import ViewPage from './components/views/Viewpage/ViewPage'
+import ViewPage from './components/views/Viewpage/ViewRouterPage'
 import './Layout.css'
 
 const { Header, Footer, Sider, Content } = Layout;
@@ -20,7 +20,7 @@ function App() {
           <div className="site-layout-content">
             <Switch>
               <Route exact path="/" component={LandingPage} />
-              <Route exact path="/page" component={ViewPage} />
+              <Route path="/page" component={ViewPage} />
             </Switch>
           </div>
         </Content>
