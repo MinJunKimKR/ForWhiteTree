@@ -4,7 +4,7 @@ import { Space, Input, Typography, Button } from 'antd';
 const { Title, Paragraph, Text } = Typography;
 
 
-function ViewPage(history) {
+function ViewPage({ history }) {
 
     const [password, setPassword] = useState("")
 

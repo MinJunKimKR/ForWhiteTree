@@ -4,7 +4,7 @@ import { Space, Input, Typography, Button } from 'antd';
 const { Title, Paragraph, Text } = Typography;
 
 
-function ViewPage(history) {
+function ViewPage({ history }) {
 
     const [password, setPassword] = useState("")
 
@@ -16,7 +16,7 @@ function ViewPage(history) {
         if (password) {
             axios.post('/api/giftbox/4', { 'password': password }).then(response => {
                 if (response.data.result) {
-                    history.push('/page/fifth')
+                    history.push('/page/giftbox')
                 } else {
                     alert('비밀번호가 틀렸습니다')
                 }
